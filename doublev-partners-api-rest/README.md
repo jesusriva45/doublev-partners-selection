@@ -4,9 +4,10 @@
 
 ## Pasos para desplegar la aplicación en DOCKER
 
-- ### ejecutar una sola vez el siguiente comando
+### ejecutar una sola vez el siguiente comando para crear una red en docker
 - #### docker network create doublev
 
+## comandos para crear imagen y desplegar en contenedor docker
 - #### ubicarse en el directorio raiz -> doublev-partners-selection
 - #### mvn clean package install
 - #### docker build -t dp-api-rest . -f .\doublev-partners-api-rest\Dockerfile
