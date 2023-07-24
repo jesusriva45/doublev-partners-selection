@@ -1,0 +1,47 @@
+
+scalar Long
+scalar Object
+scalar Date
+
+
+type Mutation{
+    registrarTicket(registrarTicketRequest: RegistrarTicketRequest) : TicketVO
+}
+
+type Query{
+    listarTicketPorCampo(request : ConsultaTicketPaginationRequest) : PaginationResponse
+}
+
+type TicketVO{
+    idTicket : Long,
+    fechaCreacion : String,
+    fechaActualizacion : String,
+    estado : String,
+    usuario: UsuarioVO
+}
+
+type UsuarioVO{
+    idUsuario : Long,
+    nombre : String,
+    apellido : String
+    identificacion: String
+}
+
+input ConsultaTicketPaginationRequest{
+    idTicket : Long,
+    offset: Int,
+    pageSize : Int,
+    fieldName : String
+}
+
+type PaginationResponse{
+    totalElementByPage : Int
+    totalElements: Int,
+    response : Object
+}
+
+input RegistrarTicketRequest{
+    identificacion : String,
+    nombre: String,
+    apellido : String
+}

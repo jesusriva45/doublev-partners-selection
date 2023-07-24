@@ -1,0 +1,26 @@
+
+server:
+  servlet.context-path: /ticket-api-rest
+  port: 9520
+
+
+spring:
+  datasource:
+    username: sa
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    password:
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+
+
+  graphql:
+    graphiql:
+      enabled: true
+    schema-location-pattern: "**/*.graphqls"
